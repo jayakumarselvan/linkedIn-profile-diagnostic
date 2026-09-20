@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LinkedIn Profile Diagnostic</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace">
+        <form id="diagnostic-form" class="panel">
+          <div class="form-header">
+            <!-- <p class="eyebrow">Linked In</p> -->
+            <h1>LinkedIn Profile Diagnostic</h1>
+          </div>
+
+          <label>
+            LinkedIn URL
+            <input
+              name="linkedin_url"
+              type="url"
+              placeholder="https://www.linkedin.com/in/name/"
+              required
+            />
+          </label>
+
+          <label>
+            Subject name
+            <input name="subject_name" type="text" placeholder="Founder or CEO name" required />
+          </label>
+
+          <label>
+            Company name
+            <input name="company_name" type="text" placeholder="Company or fund name" />
+          </label>
+
+          <label>
+            Manual public source URLs
+            <textarea
+              name="manual_source_urls"
+              rows="5"
+              placeholder="One URL per line. Official website, regulator page, press page, profile page."
+            ></textarea>
+          </label>
+
+          <label>
+            Notes
+            <textarea
+              name="notes"
+              rows="4"
+              placeholder="Optional context, for example UAE-based fintech founder."
+            ></textarea>
+          </label>
+
+          <button type="submit">Build Diagnostic</button>
+        </form>
+
+        <section class="result" aria-live="polite">
+          <div id="empty-state" class="empty">
+            <p>Run a diagnostic to generate the one-page output, verification labels, and refused claim.</p>
+          </div>
+          <div id="loading" class="loading hidden">Researching public sources and checking claims...</div>
+          <article id="output" class="diagnostic hidden"></article>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
