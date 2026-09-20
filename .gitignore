@@ -1,3 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.ruff_cache/
+.pytest_cache/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
